@@ -1,4 +1,4 @@
-/* Page & text */
+/* Page background & text */
 body {
     background-color: #1e1e1e;
     color: #d0d0d0;
@@ -9,19 +9,36 @@ body {
     max-width: 800px;
   }
   
-  /* Card styling */
-  .card {
+  /* Dark card base */
+  .dark-card {
+    background-color: #2a2a2a;
     border: none;
     border-radius: 0.75rem;
   }
   
-  /* Card headers darker */
+  /* Colored left borders */
+  .border-left-primary {
+    border-left: 5px solid #007bff;
+  }
+  .border-left-success {
+    border-left: 5px solid #28a745;
+  }
+  .border-left-info {
+    border-left: 5px solid #17a2b8;
+  }
+  
+  /* Card headers rounded */
   .card-header {
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
   }
   
-  /* Muted “lead” text */
+  /* Title accent */
+  .text-primary {
+    color: #007bff !important;
+  }
+  
+  /* Muted lead text */
   .lead {
     font-size: 1.1rem;
     color: #aaa !important;
@@ -33,10 +50,5 @@ body {
   }
   .card-body ul li {
     margin-bottom: 0.75rem;
-  }
-  
-  /* Lower opacity for less contrast */
-  .text-muted {
-    opacity: 0.6 !important;
   }
   
