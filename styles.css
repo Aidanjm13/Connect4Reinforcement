@@ -1,0 +1,35 @@
+/* Container tweaks */
+.container {
+    max-width: 800px;
+  }
+  
+  /* Card shadows and rounding */
+  .card {
+    border: none;
+    border-radius: 0.75rem;
+  }
+  
+  /* Header styles */
+  .card-header {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+  }
+  
+  /* Lead paragraph styling */
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  /* List item spacing */
+  .card-body ul {
+    padding-left: 1rem;
+  }
+  .card-body ul li {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Utility for muted subtext */
+  .text-muted {
+    opacity: 0.8;
+  }
+  

@@ -6,63 +6,102 @@
     <title>Connect 4 Reinforcement</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="styles.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
-    <h1>Welcome to Connect 4 Reinforcement</h1>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-center">Game Overview</h2>
-                <p class="text-justify">
-                    Connect 4 Reinforcement is a strategic game where players take turns dropping colored discs into a grid. 
-                    The goal is to connect four of your discs in a row, column, or diagonal before your opponent does.
+    <div class="container my-5">
+        <!-- Title -->
+        <div class="row mb-4">
+            <div class="col">
+            <h1 class="display-4 text-center">Accessible Connect 4 AI</h1>
+            <p class="lead text-center text-muted">
+                Bringing Connect 4 to players with visual or mobility impairments
+            </p>
+            </div>
+        </div>
+        
+        <!-- Problem Description -->
+        <div class="row mb-5">
+            <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Problem Description</h2>
+                </div>
+                <div class="card-body">
+                <p>
+                    At face value, Connect 4 is a very simple game. Players take turns placing pieces into columns,
+                    with the first player to make 4 in a row horizontally, vertically, or diagonally winning. However,
+                    with over 4.5 trillion board states, this game allows for complex strategies to force your opponent
+                    into a losing position. This makes Connect 4 ideal for players of all ages.
                 </p>
+                <p>
+                    Unfortunately, Connect 4 is not accessible to all. Individuals who are blind or have difficulty
+                    moving the pieces may find it challenging to play with either the physical board or existing
+                    online versions. We’ve developed a program to let such players play Connect 4 without touching
+                    or seeing the board.
+                </p>
+                </div>
+            </div>
             </div>
         </div>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <h3>Features</h3>
+        
+        <!-- Implementation, Challenges, and Decisions -->
+        <div class="row mb-5">
+            <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                <h2 class="h5 mb-0">Implementation, Challenges, and Decisions</h2>
+                </div>
+                <div class="card-body">
+                <p>
+                    Our solution came in two major parts: 
+                    <strong>a reinforcement learning model</strong> and 
+                    <strong>an accessible UI</strong>. Each posed its own challenges.
+                </p>
                 <ul>
-                    <li>Interactive gameplay</li>
-                    <li>AI opponent with reinforcement learning</li>
-                    <li>Customizable grid size</li>
+                    <li>
+                    <strong>DQN Model Training:</strong>  
+                    Initial single-model DQN struggled beyond basic play. Splitting into two models (first-player and second-player)
+                    improved vertical threat blocking, but horizontal and diagonal defense lagged. We tweaked rewards,
+                    epsilon decay, network depth, and replay buffer design—but training time and compute limits constrained us.
+                    </li>
+                    <li>
+                    <strong>Hybrid Approaches:</strong>  
+                    We experimented with AlphaZero-style MCTS (too heavy), DQN with hard-coded blocks, and eventually
+                    a “perfect” solved-game API to guide training. The final model uses the solved-game API to teach
+                    itself, yielding strong play without hand-coding.
+                    </li>
+                    <li>
+                    <strong>Accessible UI:</strong>  
+                    Designed to accept <em>voice commands</em> for column selection and a “read board” command for
+                    blind players. Due to Colab’s audio limitations, we prototyped in a local Jupyter/VS Code setup
+                    using pre-recorded audio files to demonstrate the concept.
+                    </li>
                 </ul>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>How to Play</h3>
-                <ol>
-                    <li>Select a column to drop your disc.</li>
-                    <li>Take turns with the AI or another player.</li>
-                    <li>Connect four discs to win!</li>
-                </ol>
             </div>
         </div>
-        <div class="row mt-4">
-            <div class="col-md-12">
-                <h3 class="text-center">Game Statistics</h3>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Statistic</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Total Games Played</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Player Wins</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>AI Wins</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
-                </table>
+        
+        <!-- Future Considerations -->
+        <div class="row">
+            <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                <h2 class="h5 mb-0">Future Considerations</h2>
+                </div>
+                <div class="card-body">
+                <p>
+                    <strong>Perfect Play:</strong> A Mini-Max or full MCTS implementation could guarantee optimal moves.
+                    A difficulty slider could introduce randomness to make play more approachable.
+                </p>
+                <p>
+                    <strong>Enhanced UI:</strong> Integrate with a live speech-to-text / text-to-speech engine for real-time
+                    voice interaction. Expand to other board games to improve accessibility across the hobby gaming space.
+                </p>
+                </div>
+            </div>
             </div>
         </div>
     </div>
