@@ -5,9 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect 4 Reinforcement</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
     <h1>Welcome to Connect 4 Reinforcement</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Game Overview</h2>
+                <p class="text-justify">
+                    Connect 4 Reinforcement is a strategic game where players take turns dropping colored discs into a grid. 
+                    The goal is to connect four of your discs in a row, column, or diagonal before your opponent does.
+                </p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Features</h3>
+                <ul>
+                    <li>Interactive gameplay</li>
+                    <li>AI opponent with reinforcement learning</li>
+                    <li>Customizable grid size</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3>How to Play</h3>
+                <ol>
+                    <li>Select a column to drop your disc.</li>
+                    <li>Take turns with the AI or another player.</li>
+                    <li>Connect four discs to win!</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3 class="text-center">Game Statistics</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total Games Played</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Player Wins</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>AI Wins</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
