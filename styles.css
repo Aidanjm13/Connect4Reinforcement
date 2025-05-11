@@ -1,23 +1,30 @@
-/* Container tweaks */
-.container {
+/* Page & text */
+body {
+    background-color: #1e1e1e;
+    color: #d0d0d0;
+  }
+  
+  /* Container width */
+  .container {
     max-width: 800px;
   }
   
-  /* Card shadows and rounding */
+  /* Card styling */
   .card {
     border: none;
     border-radius: 0.75rem;
   }
   
-  /* Header styles */
+  /* Card headers darker */
   .card-header {
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
   }
   
-  /* Lead paragraph styling */
+  /* Muted “lead” text */
   .lead {
     font-size: 1.1rem;
+    color: #aaa !important;
   }
   
   /* List item spacing */
@@ -28,8 +35,8 @@
     margin-bottom: 0.75rem;
   }
   
-  /* Utility for muted subtext */
+  /* Lower opacity for less contrast */
   .text-muted {
-    opacity: 0.8;
+    opacity: 0.6 !important;
   }
   
