@@ -62,15 +62,22 @@
               <ul>
                 <li>
                   <strong>DQN Model Training:</strong>
-                  Initial single-model DQN struggled beyond basic play. Splitting into two models improved
+                  Initial single-model DQN struggled to surpass basic play. Splitting into two models improved
                   vertical threat blocking but horizontal and diagonal defense lagged. We tweaked rewards,
-                  epsilon decay, network depth, and replay buffer design—within our compute limits.
+                  epsilon decay, network depth, and replay buffer design—within our compute limits. One
+                  original model attempted to use a dataset to learn good board positions from.
+                  This dataset can be found here:
+                  <a href="https://archive.ics.uci.edu/dataset/26/connect+4" target="_blank">Data Set</a>
                 </li>
                 <li>
                   <strong>Hybrid Approaches:</strong>
-                  We tried AlphaZero-style MCTS (too heavy), DQN with hard-coded blocks, and finally a “perfect”
-                  solved-game API to guide training. The final model uses that API to learn strong play without
-                  hand-coding.
+                  Unfortunately, many of our original approaches failed to get past extremely basic strategy.
+                  We attempted other more complex approaches to try to solve this problem. This first was 
+                  an AlphaZero-style approach which used a Monte Carlo Simulaiton to look into future moves, however,
+                  this was too computationally heavy. We also attempted a DQN with hard-coded moves to block threats and
+                  make winning moves, while this performed better it seemed against the spirit of machine learning,
+                  Finally we used calls to “perfect” solved-game API which is able to evaluate every move in order to give
+                  a better reward function. The final model that we have utilizes this API.
                 </li>
                 <li>
                   <strong>Accessible UI:</strong>
@@ -157,9 +164,9 @@
                   <p>
                       Click the link below to download the complete project folder, including the Jupyter notebook and trained weights:
                   </p>
-                  <a href="https://raw.githubusercontent.com/Aidanjm13/Connect4Reinforcement/main/BQN/CS420_c4_dqn.ipynb" 
+                  <a href="https://raw.githubusercontent.com/Aidanjm13/Connect4Reinforcement/main/DQN.zip" 
                     class="btn btn-warning mb-3" download>
-                      📦 Download Project Notebook
+                      📦 Download Project Notebook and Trained Weights
                   </a>
                   <!-- Executive Report Section -->
                   <h5>Executive Report:</h5>
